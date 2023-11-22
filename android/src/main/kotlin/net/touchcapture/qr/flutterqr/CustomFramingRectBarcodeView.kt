@@ -1,5 +1,6 @@
 package net.touchcapture.qr.flutterqr
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
@@ -17,10 +18,10 @@ class CustomFramingRectBarcodeView : BarcodeView {
         defStyleAttr
     )
 
+    @SuppressLint("CheckResult")
     override fun calculateFramingRect(container: Rect, surface: Rect): Rect {
         val containerArea = Rect(container)
-        val intersects =
-            containerArea.intersect(surface) //adjusts the containerArea (code from super.calculateFramingRect)
+        containerArea.intersect(surface) //adjusts the containerArea (code from super.calculateFramingRect)
         val scanAreaRect = super.calculateFramingRect(container, surface)
         if (bottomOffset != BOTTOM_OFFSET_NOT_SET_VALUE) { //if the setFramingRect function was called, then we shift the scan area by Y
             val scanAreaRectWithOffset = Rect(scanAreaRect)
