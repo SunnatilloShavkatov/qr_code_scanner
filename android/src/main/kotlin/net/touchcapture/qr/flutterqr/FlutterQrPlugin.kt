@@ -1,6 +1,5 @@
 package net.touchcapture.qr.flutterqr
 
-import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.embedding.engine.plugins.activity.ActivityAware
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
@@ -8,7 +7,7 @@ import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding
 class FlutterQrPlugin : FlutterPlugin, ActivityAware {
 
     /** Plugin registration embedding v2 */
-    override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+    override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         flutterPluginBinding.platformViewRegistry
             .registerViewFactory(
                 VIEW_TYPE_ID,
