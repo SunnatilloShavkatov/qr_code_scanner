@@ -39,20 +39,16 @@ class QrScannerOverlayShape extends ShapeBorder {
   EdgeInsetsGeometry get dimensions => const EdgeInsets.all(10);
 
   @override
-  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
-    return Path()
-      ..fillType = PathFillType.evenOdd
-      ..addPath(getOuterPath(rect), Offset.zero);
-  }
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) => Path()
+    ..fillType = PathFillType.evenOdd
+    ..addPath(getOuterPath(rect), Offset.zero);
 
   @override
   Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
-    Path getLeftTopPath(Rect rect) {
-      return Path()
-        ..moveTo(rect.left, rect.bottom)
-        ..lineTo(rect.left, rect.top)
-        ..lineTo(rect.right, rect.top);
-    }
+    Path getLeftTopPath(Rect rect) => Path()
+      ..moveTo(rect.left, rect.bottom)
+      ..lineTo(rect.left, rect.top)
+      ..lineTo(rect.right, rect.top);
 
     return getLeftTopPath(rect)
       ..lineTo(
@@ -173,11 +169,9 @@ class QrScannerOverlayShape extends ShapeBorder {
   }
 
   @override
-  ShapeBorder scale(double t) {
-    return QrScannerOverlayShape(
-      borderColor: borderColor,
-      borderWidth: borderWidth,
-      overlayColor: overlayColor,
-    );
-  }
+  ShapeBorder scale(double t) => QrScannerOverlayShape(
+        borderColor: borderColor,
+        borderWidth: borderWidth,
+        overlayColor: overlayColor,
+      );
 }

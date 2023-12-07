@@ -60,9 +60,7 @@ enum BarcodeFormat {
 }
 
 extension BarcodeTypesExtension on BarcodeFormat {
-  int asInt() {
-    return index;
-  }
+  int asInt() => index;
 
   static BarcodeFormat fromString(String format) {
     switch (format) {
